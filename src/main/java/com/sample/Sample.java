@@ -22,10 +22,11 @@ public class Sample {
         context.setVariable("targetId", "12345");
 
         FileTemplateResolver resolver = new FileTemplateResolver();
+        resolver.setPrefix("resources/");
         resolver.setTemplateMode(TemplateMode.TEXT);
         TemplateEngine engine = new TemplateEngine();
         engine.addTemplateResolver(resolver);
-        Path path = Paths.get("sample.txt");
+        Path path = Paths.get("out/sample.txt");
 
         try (Writer writer = Files.newBufferedWriter(path)) {
             engine.process("sample.template", context, writer);
