@@ -1,3 +1,9 @@
 TargetId:[[${targetId}]]
 
+[# th:each="target : ${targetList}"]
+[[${target.name}]]
+[[${target.dir}]]
+[[${target.ver}]]
+[/]
+
 end
